@@ -1,3 +1,5 @@
+# These functions are implementations of the algorithms of Remie Janssen's PhD thesis
+
 import networkx as nx
 import random
 import sys
@@ -416,7 +418,7 @@ def Labels(network):
 
 def GL_Case1_rSPR(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
     """
-    An implementation of Algorithm 3. Finds a sequence of rSPR moves that makes it possible to add the lowest reticulation up to the down-closed isomrophism.
+    An implementation of Algorithm 2. Finds a sequence of rSPR moves that makes it possible to add the lowest reticulation up to the down-closed isomrophism.
 
     :param N: a phylogenetic network.
     :param Np: a phylogenetic network.
@@ -456,7 +458,7 @@ def GL_Case1_rSPR(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
 
 def GL_Case1_Tail(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
     """
-    An implementation of Algorithm 7. Finds a sequence of tail moves that makes it possible to add the lowest reticulation up to the down-closed isomrophism.
+    An implementation of Algorithm 6. Finds a sequence of tail moves that makes it possible to add the lowest reticulation up to the down-closed isomrophism.
 
     :param N: a phylogenetic network.
     :param Np: a phylogenetic network.
@@ -544,7 +546,7 @@ def GL_Case1_Tail(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
 
 def GL_Case3(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
     """
-    An implementation of Algorithm 4. Finds a sequence of tail moves that makes it possible to add the lowest tree node up to the down-closed isomrophism.
+    An implementation of Algorithm 3. Finds a sequence of tail moves that makes it possible to add the lowest tree node up to the down-closed isomrophism.
 
     :param N: a phylogenetic network.
     :param Np: a phylogenetic network.
@@ -622,7 +624,7 @@ def GL_Case3(N, Np, up, isom_N_Np, isom_Np_N, randomNodes=False):
 
 def Green_Line(network1, network2, head_moves=True):
     """
-    An implementation of Algorithm 5 and its tail move counterpart. Finds a sequence of tail/rSPR moves from network1 to network2 by building a down-closed isomorphism.
+    An implementation of Algorithm 4 and its tail move counterpart. Finds a sequence of tail/rSPR moves from network1 to network2 by building a down-closed isomorphism.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -754,7 +756,7 @@ def Green_Line_Random(network1, network2, head_moves=True, repeats=1):
 
 def Green_Line_Random_Single(network1, network2, head_moves=True):
     """
-    An implementation of Algorithm 6 and its tail move counterpart. Finds a sequence of tail/rSPR moves from network1 to network2 by randomly building a down-closed isomorphism.
+    An implementation of Algorithm 5 and its tail move counterpart. Finds a sequence of tail/rSPR moves from network1 to network2 by randomly building a down-closed isomorphism.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -896,7 +898,7 @@ def Green_Line_Random_Single(network1, network2, head_moves=True):
 # returns moves1,moves2,addedNode1,addedNode2
 def RL_Case1(N1, N2, x_1, isom_N1_N2, isom_N2_N1, randomNodes=False):
     """
-    An implementation of Algorithm 8. Finds a sequence of head moves that makes it possible to add the highest tree node x_1 to the up-closed isomrophism.
+    An implementation of Algorithm 7. Finds a sequence of head moves that makes it possible to add the highest tree node x_1 to the up-closed isomrophism.
 
     :param N1: a phylogenetic network.
     :param N2: a phylogenetic network.
@@ -1000,7 +1002,7 @@ def RL_Case1(N1, N2, x_1, isom_N1_N2, isom_N2_N1, randomNodes=False):
 # returns moves1,moves2,addedNode1,addedNode2
 def RL_Case3(N1, N2, x_1, isom_N1_N2, isom_N2_N1, randomNodes=False):
     """
-    An implementation of Algorithm 9. Finds a sequence of head moves that makes it possible to add the highest reticulation x_1 to the up-closed isomrophism.
+    An implementation of Algorithm 8. Finds a sequence of head moves that makes it possible to add the highest reticulation x_1 to the up-closed isomrophism.
 
     :param N1: a phylogenetic network.
     :param N2: a phylogenetic network.
@@ -1069,7 +1071,7 @@ def RL_Case3(N1, N2, x_1, isom_N1_N2, isom_N2_N1, randomNodes=False):
 # Permutes the leaves of a network so that it becomes leaf isomorphic, provided the networks were already (non-labeled) ismorphic
 def Permute_Leaves_Head(network1, network2, isom_1_2, isom_2_1, label_dict_1, label_dict_2):
     """
-    An implementation of Algorithm 10. Determines a sequence of head moves that makes two isomorphic networks labeled isomorphic.
+    An implementation of Algorithm 9. Determines a sequence of head moves that makes two isomorphic networks labeled isomorphic.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -1164,7 +1166,7 @@ def Permute_Leaves_Head(network1, network2, isom_1_2, isom_2_1, label_dict_1, la
 # A heuristic for finding a head move sequence between two networks.
 def Red_Line(network1, network2):
     """
-    An implementation of Algorithm 11. Finds a sequence of head moves from network1 to network2 by building an up-closed isomorphism.
+    An implementation of Algorithm 10. Finds a sequence of head moves from network1 to network2 by building an up-closed isomorphism.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -1278,7 +1280,7 @@ def Red_Line_Random(network1, network2, repeats=1):
 
 def Red_Line_Random_Single(network1, network2):
     """
-    An implementation of Algorithm 12. Finds a sequence of head moves from network1 to network2 by building randomly an up-closed isomorphism.
+    An implementation of Algorithm 11. Finds a sequence of head moves from network1 to network2 by building randomly an up-closed isomorphism.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -1511,7 +1513,7 @@ def Deep_Dive_Scored(network1, network2, head_moves=True, bound_heuristic=Green_
 
 def Depth_First(network1, network2, tail_moves=True, head_moves=True, max_time=False, show_bounds=True):
     """
-    An implementation of Algorithm 2. Uses an iterated Depth First Search to simulate a Breath First Search.
+    An implementation of Algorithm 1. Uses an iterated Depth First Search to simulate a Breath First Search.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
@@ -1541,7 +1543,7 @@ def Depth_First(network1, network2, tail_moves=True, head_moves=True, max_time=F
 # Finds a shortest sequence between network1 and network2 using DFS with bounded depth
 def Depth_First_Bounded(network1, network2, tail_moves=True, head_moves=True, max_depth=0, stop_time=False):
     """
-    An subroutine of Algorithm 2. A depth-bounded Depth First Search used to simulate a Breath First Search.
+    An subroutine of Algorithm 1. A depth-bounded Depth First Search used to simulate a Breath First Search.
 
     :param network1: a phylogenetic network.
     :param network2: a phylogenetic network.
